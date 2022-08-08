@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="main">
+    <div class="cards">
+      <div class="back">
+        <span id="cvc-card">000</span>
+      </div>
+      <div class="front">
+        <img src="./images/card-logo.svg" class="card__logo" alt="card logo" />
+        <span id="number-card">0000 0000 0000 0000</span>
+        <span id="name-card">Jane Appleseed</span>
+        <span id="date-card"><span id="month-card">00</span>/<span id="year-card">00</span></span>
+      </div>
+    </div>
+    <div class="content">
+      <form id="card-form" class="form visible">
+        <div class="input">
+          <label for="name">Cardholder Name</label>
+          <input type="text" placeholder="e.g. Jane Appleseed" id="name" name="name" />
+          <p class="input__error name__error"></p>
+        </div>
+        <div class="input">
+          <label for="number">Card Number</label>
+          <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="number" name="number" />
+          <p class="input__error number__error"></p>
+        </div>
+        <div class="input--date">
+          <label for="month">Exp. Date (MM/YY)</label>
+          <div>
+            <input type="number" placeholder="MM" id="month" name="month" min="1" max="12" step="1" />
+            <input type="number" placeholder="YY" id="year" name="year" min="0" max="99" step="1" />
+          </div>
+          <p class="input__error month__error year__error"></p>
+        </div>
+        <div class="input--cvc">
+          <label for="cvc">CVC</label>
+          <input type="number" min="0" max="999" step="1" placeholder="e.g. 123" id="cvc" name="cvc" />
+          <p class="input__error cvc__error"></p>
+        </div>
+        <button type="submit" class="btn">Confirm</button>
+      </form>
+      <section class="complete">
+        <header>
+          <img src="./images/icon-complete.svg" alt="icon complete" class="complete__icon" />
+          <h1 class="complete__title">Thank you!</h1>
+        </header>
+        <p class="complete__text">We've added your card details</p>
+        <button id="continue" class="btn">Continue</button>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" rel="noopener" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/MartaZaorska" target="_blank" rel="noopener">Marta Zaorska</a>.
+    </p>
+  </footer>
+  <script defer src="./main.js"></script>
+</body>
+</html>
