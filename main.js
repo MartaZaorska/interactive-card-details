@@ -30,7 +30,9 @@ function clearCard(){
   });
 }
 
-numberInput.addEventListener("keypress", e => e.target.value = e.target.value.replace(/\W/gi, '').replace(/(.{4})/g, '$1 '));
+numberInput.addEventListener("keydown", e => {
+  if(e.key !== "Backspace") e.target.value = e.target.value.replace(/\W/gi, '').replace(/(.{4})/g, '$1 ');
+});
 
 inputElements.forEach(inputElement => inputElement.addEventListener("input", changeInputChandler));
 
